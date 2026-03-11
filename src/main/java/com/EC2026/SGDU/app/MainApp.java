@@ -16,6 +16,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(root);
         primaryStage.setTitle("Sistema de Gestión SGDU");
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 

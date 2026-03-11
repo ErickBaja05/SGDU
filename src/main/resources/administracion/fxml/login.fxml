@@ -1,20 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="612.0" prefWidth="915.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.EC2026.SGDU.administración.gestionUsuarios.controller.loginController">
+<AnchorPane id="bigBox" prefHeight="612.0" prefWidth="915.0" stylesheets="@../css/loginStyles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.EC2026.SGDU.administración.gestionUsuarios.controller.loginController">
    <children>
-      <VBox layoutX="176.0" layoutY="70.0" prefHeight="612.0" prefWidth="915.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox id="box" layoutX="107.0" layoutY="124.0" prefHeight="612.0" prefWidth="915.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <VBox id="boxLeft" alignment="CENTER" prefHeight="612.0" prefWidth="455.0">
                <children>
-                  <Label text="SISTEMA DE GESTIÓN DEPORTIVO PARA SU CLUB" />
+                  <VBox id="contentLeft" alignment="CENTER" maxWidth="-Infinity" prefHeight="494.0" prefWidth="409.0" spacing="20.0">
+                     <children>
+                        <Label styleClass="title" text="SGDU: GESTIÓN DEPORTIVA" wrapText="true" />
+                        <Label id="description" text="Bienvenido al Sistema para gestionar su club deportivo" />
+                     </children>
+                  </VBox>
                </children>
-            </HBox>
+               <padding>
+                  <Insets left="45.0" />
+               </padding>
+            </VBox>
+            <VBox id="boxRight" alignment="CENTER" prefHeight="612.0" prefWidth="462.0">
+               <children>
+                  <VBox id="contentRight" alignment="CENTER" prefHeight="494.0" prefWidth="417.0" spacing="15.0">
+                     <children>
+                        <ImageView fitHeight="115.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/loginImg.png" />
+                           </image>
+                        </ImageView>
+                        <Label id="info" text="Ingrese sus credenciales" />
+                        <VBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="417.0" spacing="8.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="18.0" prefWidth="446.0">
+                                 <children>
+                                    <Label styleClass="labelForm" text="Escoja un perfil" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="18.0">
+                                 <children>
+                                    <ComboBox fx:id="comboUser" prefHeight="26.0" prefWidth="313.0" promptText="Escoja un perfil" styleClass="field" />
+                                    <Label fx:id="iconUser" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="417.0" spacing="8.0">
+                           <children>
+                              <HBox maxWidth="-Infinity" prefHeight="18.0" prefWidth="463.0">
+                                 <children>
+                                    <Label styleClass="labelForm" text="Nombre de usuario" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="18.0">
+                                 <children>
+                                    <TextField fx:id="txtUsername" maxWidth="-Infinity" prefHeight="26.0" prefWidth="313.0" promptText="Ingrese su nombre de usuario" styleClass="field" />
+                                    <Label fx:id="iconUserName" text="Label" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="417.0" spacing="8.0">
+                           <children>
+                              <HBox maxWidth="-Infinity" prefHeight="18.0" prefWidth="508.0">
+                                 <children>
+                                    <Label styleClass="labelForm" text="Contraseña" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="18.0">
+                                 <children>
+                                    <PasswordField fx:id="txtPassField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="313.6" promptText="Ingrese su contraseña" styleClass="field" />
+                                    <TextField fx:id="txtPassVisible" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="313.6" promptText="Ingrese su contraseña" styleClass="field" />
+                                    <Button fx:id="iconEye" mnemonicParsing="false" onAction="#seePass" onMouseEntered="#changeToBlue" onMouseExited="#changeToBlack" styleClass="btnSeePass" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="TOP_RIGHT" maxWidth="-Infinity" prefHeight="23.0" prefWidth="402.0">
+                           <children>
+                              <Button id="btnPassRecovery" fx:id="btnForgetPass" mnemonicParsing="false" prefHeight="23.0" prefWidth="156.0" text="¿Olvidó su contraseña?" />
+                           </children>
+                        </HBox>
+                        <Button id="btnLogin" fx:id="btnLogin" mnemonicParsing="false" onAction="#login" prefHeight="36.0" prefWidth="372.0" text="INICIAR SESIÓN" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></VBox>
+               </children>
+               <padding>
+                  <Insets right="45.0" />
+               </padding>
+            </VBox>
          </children>
-      </VBox>
+      </HBox>
    </children>
 </AnchorPane>

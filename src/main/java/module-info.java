@@ -11,6 +11,7 @@ module com.EC2026.SGDU {
     requires java.desktop;
     requires javafx.base;
 
+
     opens com.EC2026.SGDU.administración.gestionUsuarios.controller to javafx.fxml;
     opens com.EC2026.SGDU.administración.gestionParámetros.controller to javafx.fxml;
     opens com.EC2026.SGDU.contratos.controller to javafx.fxml;
