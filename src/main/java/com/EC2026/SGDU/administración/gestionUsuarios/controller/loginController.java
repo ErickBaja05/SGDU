@@ -6,11 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import org.kordamp.ikonli.javafx.FontIcon;
 
@@ -51,6 +47,12 @@ public class loginController implements Initializable {
 
     @FXML
     void login(ActionEvent event) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Ingreso éxitoso");
+        alert.setHeaderText("Bienvenido al sistema");
+        alert.setContentText("Se ha autenticado correctamente");
+        alert.showAndWait();
+
         Parent root = FXMLLoader.load(getClass().getResource("/administracion/fxml/mainMenu.fxml"));
         NavigationUtil.changeScene(event,root);
 
