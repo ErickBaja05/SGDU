@@ -5,7 +5,6 @@
 }
 #boxLeft{
 
-    -fx-background-image: url("../img/fondoIzquierda.jpg");
     -fx-background-size: cover;
 
 }
